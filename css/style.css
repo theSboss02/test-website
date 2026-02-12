@@ -1,0 +1,668 @@
+/* =========================================================
+   Selina Lechner – Physiotherapie (style.css)
+   Ruhig, luftig, praxis-typisch (One‑Page)
+   ========================================================= */
+
+/* ---------- Zierstreifen ---------- */
+.top-accent{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(228,169,147,.55),
+    rgba(191,209,206,.45),
+    rgba(228,169,147,.55)
+  );
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- Basis ---------- */
+:root{
+  --bg:#e3e2dc;
+  --paper:#ffffff;
+  --ink:#1d1d1b;
+  --muted:rgba(29,29,27,.72);
+  --line:rgba(29,29,27,.12);
+  --soft:rgba(255,255,255,.65);
+  --accent:#e4a993;
+  --accent2:#bfd1ce;
+  --radius:22px;
+}
+
+*{ box-sizing:border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--ink);
+}
+
+a, p, li, span{
+  font-family:'Roboto Mono', monospace;
+  font-size:17px;
+  line-height:1.75;
+  letter-spacing:.01em;
+  color:var(--ink);
+}
+
+h1, h2, h3{
+  font-family:'Roboto Slab', serif;
+  margin:0 0 10px;
+  letter-spacing:.01em;
+}
+
+p{ margin:0 0 14px; }
+ul{ margin:0; padding-left:18px; }
+li{ margin: 0 0 8px; }
+
+.muted{ color:var(--muted); }
+.small{ font-size:14px; }
+
+.wrap{
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header{
+  position: sticky;
+  top: 10px; /* unter dem Zierstreifen */
+  z-index: 50;
+  background: rgba(227,226,220,.75);
+  border-bottom: 1px solid rgba(29,29,27,.08);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 0;
+  gap: 14px;
+}
+
+.brand{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.brand-dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background: rgba(228,169,147,.75);
+  box-shadow: 0 0 0 6px rgba(228,169,147,.18);
+}
+
+.brand-name{
+  font-family:'Roboto Slab', serif;
+  font-size:18px;
+}
+
+.brand-sub{
+  font-size:13px;
+  color:var(--muted);
+  margin-left:6px;
+}
+
+.nav{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav a{
+  text-decoration:none;
+  color:var(--muted);
+  padding: 6px 10px;
+  border-radius:999px;
+  border: 1px solid transparent;
+}
+
+.nav a:hover{
+  color:var(--ink);
+  border-color: rgba(29,29,27,.12);
+  background: rgba(255,255,255,.45);
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration:none;
+  transition: transform .12s ease, opacity .12s ease;
+  gap: 8px;
+}
+
+.btn:hover{ transform: translateY(-1px); opacity:.92; }
+
+.btn-ghost{
+  background: transparent;
+  color: var(--ink);
+}
+
+.link{
+  text-decoration: underline;
+  text-decoration-color: rgba(29,29,27,.35);
+  text-underline-offset: 3px;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background: var(--paper);
+  padding: 64px 0 46px;
+  border-bottom: 1px solid rgba(29,29,27,.06);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 34px;
+  align-items:start;
+}
+
+.kicker{
+  font-size:13px;
+  text-transform: uppercase;
+  letter-spacing:.08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.hero h1{
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+
+.lead{
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.cta-row{
+  display:flex;
+  gap: 12px;
+  flex-wrap:wrap;
+  margin: 30px 0 10px;
+}
+
+.trust{
+  list-style: none;
+  padding-left: 0;
+  margin-top: 14px;
+  display:grid;
+  gap: 8px;
+}
+
+.trust li{
+  padding-left: 18px;
+  position: relative;
+  color: var(--muted);
+  margin: 0;
+}
+
+.trust li::before{
+  content: "";
+  position:absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 2px;
+  background: rgba(228,169,147,.9);
+}
+
+/* Portrait */
+.hero-media{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+
+.portrait{
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 10px solid rgba(191,209,206,.25);
+  box-shadow: 0 18px 50px rgba(0,0,0,.14);
+  background: rgba(0,0,0,.03);
+}
+
+.portrait-note{
+  max-width: 360px;
+  background:  transparent rgba(227,226,220,.55);
+  border: 1px transparent rgba(29,29,27,.10);
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+}
+
+.portrait-note p{ margin:0 0 8px; }
+.portrait-note p:last-child{ margin:0; color:var(--muted); font-size:14px; }
+
+/* ---------- Sections ---------- */
+.section{
+  padding: 54px 0;
+}
+
+.section-alt{
+  background: rgba(255,255,255,.28);
+  border-top: 1px solid rgba(29,29,27,.06);
+  border-bottom: 1px solid rgba(29,29,27,.06);
+}
+
+.section-head{
+  margin-bottom: 22px;
+}
+
+.section-head p{
+  color: var(--muted);
+  max-width: 78ch;
+}
+
+/* Focus grid (Therapieschwerpunkte) */
+.focus-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.focus{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(29,29,27,.10);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  min-height: 220px;
+}
+
+.icon{
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(228,169,147,.18);
+  border: 1px solid rgba(228,169,147,.45);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.focus h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.focus ul{ margin:0; }
+.focus li{ color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+/* Steps */
+.steps{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.steps li{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(29,29,27,.10);
+  border-radius: 18px;
+  padding: 16px;
+  margin:0;
+}
+
+.step-no{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(191,209,206,.25);
+  border: 1px solid rgba(191,209,206,.6);
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+
+.steps h3{
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.steps p{
+  margin:0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Info two columns */
+.info-two{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items:start;
+}
+
+.info{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(29,29,27,.10);
+  border-radius: 18px;
+  padding: 18px 18px 14px;
+}
+
+.info h3{ font-size: 18px; }
+
+.price{
+  font-family:'Roboto Slab', serif;
+  font-size: 18px;
+}
+
+/* Contact */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items:stretch;
+}
+
+.contact-card{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(29,29,27,.10);
+  border-radius: 18px;
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.hours{
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(29,29,27,.08);
+}
+
+.fineprint{
+  text-align:center;
+  margin-top: 20px;
+  color: var(--muted);
+}
+
+.fineprint a{
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(29,29,27,.28);
+  text-underline-offset: 3px;
+}
+
+.fineprint a:hover{ color: var(--ink); }
+
+/* Footer */
+.site-footer{
+  padding: 18px 0 28px;
+}
+
+.footer-inner{
+  border-top: 1px solid rgba(29,29,27,.08);
+  padding-top: 14px;
+}
+
+.footer-inner p{ margin:0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero-media{ align-items:center; }
+  .portrait{ max-width: 260px; }
+  .focus-grid{ grid-template-columns: 1fr; }
+  .steps{ grid-template-columns: 1fr; }
+  .info-two{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+  .nav{ gap: 8px; }
+}
+
+@media (max-width: 520px){
+  .wrap{ width: min(1040px, calc(100% - 32px)); }
+  .header-inner{ padding: 12px 0; }
+  .brand-sub{ display:none; }
+  .btn{ width: 100%; }
+  .cta-row{ width: 100%; }
+}
+
+
+/* =========================================================
+   Therapieschwerpunkte – "ruhige" Layout-Variante
+   (weniger Boxen, mehr Luft, Hintergrundgrafik wie Beispiel)
+   ========================================================= */
+
+.focus-section{
+  position: relative;
+  padding: 76px 0 70px;
+  background: rgba(255,255,255,.22);
+  overflow: hidden;
+}
+
+.focus-section::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  background: url("img/bg-mountain.svg") center / cover no-repeat;
+  opacity: .22;
+  filter: grayscale(100%);
+  pointer-events:none;
+}
+
+.focus-section::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,.65),
+    rgba(255,255,255,.25),
+    rgba(255,255,255,.55)
+  );
+  pointer-events:none;
+}
+
+.focus-section .wrap{
+  position: relative;
+  z-index: 1;
+}
+
+.focus-topline{
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto 18px;
+  border-top: 2px dotted rgba(228,169,147,.75);
+}
+
+.focus-title{
+  text-align:center;
+  letter-spacing:.08em;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: rgba(180, 40, 40, .95);
+  margin-bottom: 10px;
+}
+
+.focus-subtitle{
+  text-align:center;
+  color: var(--muted);
+  margin: 0 auto 34px;
+  max-width: 78ch;
+}
+
+.focus-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 44px;
+  align-items:start;
+}
+
+/* Das sind keine "Cards" – bewusst ohne Hintergrund/Border */
+.focus-item{
+  padding: 0;
+}
+
+.focus-item h3{
+  text-align:center;
+  font-size: 15px;
+  letter-spacing:.06em;
+  text-transform: uppercase;
+  color: rgba(29,29,27,.78);
+  margin-bottom: 10px;
+}
+
+.focus-item ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.focus-item li{
+  position: relative;
+  padding-left: 18px;
+  margin: 0 0 8px;
+  color: rgba(29,29,27,.70);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.focus-item li::before{
+  content:"•";
+  position:absolute;
+  left: 0;
+  top: 0;
+  color: rgba(120,120,120,.85);
+}
+
+.focus-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 12px;
+  opacity: .55;
+}
+
+.focus-icon svg{
+  width: 40px;
+  height: 40px;
+  stroke: rgba(80,80,80,.95);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 980px){
+  .focus-grid{
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .focus-topline{ max-width: 420px; }
+}
+
+/* ÜBER MICH Variante: etwas „ruhiger“ und mehr Textbreite */
+.focus-section--about{
+  background: rgba(88, 129, 83, 0.22);
+}
+
+.focus-section--about .focus-title{
+  color: rgba(29,29,27,.78); /* nicht rot, eher neutral */
+}
+
+.focus-grid--about{
+  gap: 34px 44px; /* etwas Luft */
+}
+
+@media (max-width: 980px){
+  .focus-section--about .focus-subtitle{
+    max-width: 64ch;
+  }
+}
+
+/* Eine gemeinsame Box, innen zwei Spalten */
+.info-panel{
+  background: rgba(255,255,255,.70);
+  border: 1px solid rgba(29,29,27,.10);
+  border-radius: 18px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+}
+
+/* Spalten-Inhalt ohne eigene "Karten"-Optik */
+.info-col{
+  padding: 0;
+}
+
+/* Dezente Trennlinie nur zwischen den Spalten (Desktop) */
+.info-col + .info-col{
+  border-left: 1px solid rgba(29,29,27,.10);
+  padding-left: 28px;
+}
+
+/* Mobile: untereinander, Trennlinie wird oben */
+@media (max-width: 980px){
+  .info-panel{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .info-col + .info-col{
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid rgba(29,29,27,.10);
+    padding-top: 16px;
+  }
+}
+
+/* Hero rechts: statt Textbox ein rechteckiges Bild */
+.hero-media--center{
+  display: flex;
+  align-items: center;      /* vertikal mittig in der Spalte */
+  justify-content: center;
+}
+
+/* Das neue rechteckige Bild */
+.hero-rect{
+  width: min(520px, 100%);
+  height: auto;
+  aspect-ratio: 5 / 4;      /* kontrolliert die Form */
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(29,29,27,.10);
+  box-shadow: 0 18px 50px rgba(0,0,0,.12);
+  transform: translateY(14px); /* „etwas weiter runter“ */
+}
+
+/* Mobil: nicht zu groß, und weniger runter */
+@media (max-width: 980px){
+  .hero-rect{
+    width: min(520px, 100%);
+    transform: translateY(6px);
+  }
+}

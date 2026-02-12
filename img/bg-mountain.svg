@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#dcdad2" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="blur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <!-- soft mountain layers -->
+  <path d="M-50 650 C 250 520, 420 560, 720 450 C 930 375, 1120 380, 1650 240 L 1650 950 L -50 950 Z"
+        fill="#cfcfcf" fill-opacity="0.35" filter="url(#blur)"/>
+  <path d="M-50 760 C 180 650, 450 720, 690 610 C 910 510, 1150 570, 1650 430 L 1650 950 L -50 950 Z"
+        fill="#bfbfbf" fill-opacity="0.28" filter="url(#blur)"/>
+  <path d="M-50 845 C 220 785, 440 820, 720 740 C 980 665, 1200 720, 1650 610 L 1650 950 L -50 950 Z"
+        fill="#a9a9a9" fill-opacity="0.20" filter="url(#blur)"/>
+</svg>

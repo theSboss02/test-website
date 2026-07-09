@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Impressum – Selina Lechner</title>
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="top-accent" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">Selina Lechner</span>
+        <span class="brand-sub">Kinderphysiotherapie</span>
+      </a>
+
+      <button class="nav-toggle"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="site-nav">
+        <span class="nav-toggle-label">Menü</span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="nav" aria-label="Hauptnavigation">
+        <a href="index.html#kontakt">Kontakt</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="wrap">
+      <header class="section-head">
+        <h1>Impressum</h1>
+        <p class="muted">Information gemäß §5 E-Commerce Gesetz und Offenlegung gemäß § 25 Mediengesetz.</p>
+      </header>
+
+      <div class="info">
+        <h3>Angaben</h3>
+        <p><strong>Name:</strong> Selina Lechner</p>
+        <p><strong>Adresse:</strong> Penzinger Straße 76, 1140 Wien</p>
+        <p><strong>Email:</strong> <a class="link" href="mailto:selina.grossauer@gmx.at">selina.grossauer@gmx.at</a></p>
+        <p><strong>Telefon:</strong> <a class="link" href="tel:+436801266949">+43 680 1266 949</a></p>
+        <p style="margin-bottom: 50px;"><strong>Internet:</strong> <a class="link" href="#">www.</a></p>
+
+        <p class="small muted">Berufsbezeichnung: Physiotherapeutin</p>
+        <p class="small muted">Aufsichtsbehörde: Hygieneüberprüfung des Berufssitzes gem. § 8 MTD-G: Magistratsabteilung 15 – Gesundheitsdienst der Stadt Wien; Prüfung der Berufsberechtigung und Registrierung nach dem Gesundheitsberuferegister-Gesetz (GBRG): AK Wien</p>
+        <p class="small muted">Zuständiger Berufsverband: Physio Austria.</p>
+      </div>
+
+      <p class="fineprint"><a href="index.html">Zurück zur Startseite</a></p>
+    </div>
+  </main>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("site-nav");
+    if (!header || !toggle || !nav) return;
+
+    toggle.addEventListener("click", () => {
+      const open = header.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    });
+
+    nav.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        header.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Menü öffnen");
+      });
+    });
+  });
+  </script>
+</body>
+</html>
